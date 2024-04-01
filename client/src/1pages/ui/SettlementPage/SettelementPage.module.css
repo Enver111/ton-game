@@ -5,7 +5,7 @@
   background-image: url(../../../5shared//assets//bg/Apocalypse_21.png);
   background-size: cover;
   height: 100%;
-  padding: 30% 0;
+  padding: 15% 0;
 }
 
 .action {
@@ -13,4 +13,8 @@
   flex-direction: column;
   gap: 10px;
   text-align: center;
+}
+
+.icon {
+  width: 100px;
 }
