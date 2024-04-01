@@ -5,16 +5,16 @@
   background-image: url(../../../5shared//assets//bg/Apocalypse_21.png);
   background-size: cover;
   height: 100%;
-  padding: 15% 0;
 }
 
 .action {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   text-align: center;
 }
 
 .icon {
-  width: 100px;
+  cursor: pointer;
+  width: 80px;
 }

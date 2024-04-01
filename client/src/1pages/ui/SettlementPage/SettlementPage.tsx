@@ -43,6 +43,7 @@ export default function SettlementPage({
     inventory_scene: BackpackIcon,
     routes_scene: FightIcon,
   };
+
   return (
     <main className={style.main}>
       <h1>Settlement</h1>
@@ -58,10 +59,21 @@ export default function SettlementPage({
                   onClick={callback(scene)}
                 />
               )}
+              <div>{gameSceneLabels[scene]}</div>
             </div>
           );
         })}
       </div>
     </main>
   );
+
+  {
+    /* </div>
+            <Button
+              key={index}
+              text={gameSceneLabels[scene]}
+              size={'md'}
+              callback={callback(scene)}
+            /> */
+  }
 }
