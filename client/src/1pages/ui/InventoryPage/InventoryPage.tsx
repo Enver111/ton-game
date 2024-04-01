@@ -1,9 +1,9 @@
-import Inventory from "@entities/Inventory/ui/Inventory";
+import Inventory from '@entities/Inventory/ui/Inventory';
 
-export default function InventoryPage({game}: { game: any}) {
+export default function InventoryPage({ game }: { game: any }) {
   return (
     <main>
-      <Inventory inventory={game.inventory}/>
+      <Inventory inventory={game.inventory} />
     </main>
   );
 }

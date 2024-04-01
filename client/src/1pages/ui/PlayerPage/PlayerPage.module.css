@@ -1,0 +1,15 @@
+.player {
+  background-color: bisque;
+  color: black;
+}
+.wrap {
+  margin: 20px;
+}
+.attributes {
+  margin: 20px;
+  display: flex;
+  gap: 20px;
+}
+.icon {
+  width: 50px;
+}

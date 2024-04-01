@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #24242400;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,32 +16,36 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex;
+  /* display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  width: 100%;
-  font-family: "gramma", system-ui, sans-serif;
+  width: 100%; */
+  font-family: 'gramma', system-ui, sans-serif;
 }
 
 @font-face {
-  font-family: "fallout";
-  src: local("fallout"), url("/src/shared/assets/fonts/fallout.ttf") format("truetype");
+  font-family: 'fallout';
+  src: local('fallout'),
+    url('/src/shared/assets/fonts/fallout.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "gramma";
-  src: local("gramma"), url("/src/shared/assets/fonts/microgramma.ttf") format("truetype");
+  font-family: 'gramma';
+  src: local('gramma'),
+    url('/src/shared/assets/fonts/microgramma.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "fallouty";
-  src: local("fallouty"), url("/src/shared/assets/fonts/fallouty.ttf") format("truetype");
+  font-family: 'fallouty';
+  src: local('fallouty'),
+    url('/src/shared/assets/fonts/fallouty.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "gothic";
-  src: local("gothic"), url("/src/shared/assets/fonts/gothic.ttf") format("truetype");
+  font-family: 'gothic';
+  src: local('gothic'),
+    url('/src/shared/assets/fonts/gothic.ttf') format('truetype');
 }
 
 @media (prefers-color-scheme: light) {
@@ -60,7 +64,7 @@ body {
 .app {
   display: flex;
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: 100%;
   flex-direction: column;
   background-size: cover;
   gap: 8px;

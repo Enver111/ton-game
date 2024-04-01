@@ -4,31 +4,40 @@ import style from './Energy.module.css';
 interface EnergyProps {
   value: number;
   max: number;
-  color: string;
-  icon: React.ReactNode;
+  color1: string;
+  color2: string;
+  icon: string;
 }
 
-const Energy: React.FC<EnergyProps> = ({ value, max, color, icon }) => {
+const Energy: React.FC<EnergyProps> = ({
+  value,
+  max,
+  color1,
+  color2,
+  icon,
+}) => {
   const percentage = (value / max) * 100;
 
   return (
     <div className={style.energy}>
-      <div className={style.energy_icon}>{icon}</div>
+      <img className={style.energy_icon} src={icon} alt='icon' />
       <div
         style={{
           margin: 'auto 0',
           border: '1px solid black',
+          background: '#292626',
           width: '100px',
-          borderRadius: '15px',
-          height: "18px"
+          borderRadius: '10px',
+          height: '18px',
         }}
       >
-        <div style={{
+        <div
+          style={{
             width: `${percentage}%`,
-            maxWidth: "100%",
-            backgroundColor: color,
-            borderRadius: '15px',
-            height: "18px"
+
+            background: `linear-gradient(to right, ${color1}, ${color2})`,
+            borderRadius: '10px',
+            height: '18px',
           }}
         ></div>
       </div>

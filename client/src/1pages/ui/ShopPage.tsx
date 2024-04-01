@@ -1,7 +1,7 @@
 export default function ShopPage() {
-  return(
+  return (
     <main>
-      <h1>Shop</h1>
+      <h1>Shop11111</h1>
     </main>
-  )
+  );
 }

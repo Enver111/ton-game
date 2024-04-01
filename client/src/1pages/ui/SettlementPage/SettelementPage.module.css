@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  background-image: url(../../../5shared//assets//bg/Apocalypse_21.png);
+  background-size: cover;
+  height: 100%;
+  padding: 30% 0;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}

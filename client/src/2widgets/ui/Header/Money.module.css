@@ -5,3 +5,13 @@
 .icon {
   margin: auto;
 }
+
+.icon_img {
+  margin: 0;
+  width: 35px;
+}
+.money_num {
+  color: green;
+  font-weight: 0;
+  font-size: 20px;
+}

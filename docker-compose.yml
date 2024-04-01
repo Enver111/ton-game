@@ -18,24 +18,25 @@ services:
       - "443:443"
     networks:
       - network_redis_cluster
-  client:
-    container_name: game-client
-    hostname: client
-    restart: on-failure
-    build:
-      context: ./client
-      target: dev
-      dockerfile: Dockerfile
-    depends_on:
-      nginx:
-        condition: service_started
-      server:
-        condition: service_started
-    volumes:
-      - ./client:/client
-    networks:
-      network_redis_cluster:
-        ipv4_address: 172.30.0.99
+  #client:
+  # container_name: game-client
+  # hostname: client
+  # restart: on-failure
+  # build:
+  #   context: ./client
+  #   target: dev
+  #   dockerfile: Dockerfile
+  # depends_on:
+  #   nginx:
+  #     condition: service_started
+  #   server:
+  #     condition: service_started
+  # volumes:
+  #   - ./client:/client
+  
+  # networks:
+  #   network_redis_cluster:
+  #     ipv4_address: 172.30.0.99
   server:
     environment:
       NODE_ENV: docker
