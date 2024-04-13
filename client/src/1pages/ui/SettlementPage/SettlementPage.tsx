@@ -1,7 +1,6 @@
 import { useWebSocket } from '@shared/index.ts';
 import { initData } from '@shared/index.ts';
 import { gameSceneLabels } from '@shared/enums/GameCommands';
-import Button from '@shared/ui/Button/Button.tsx';
 
 import BackpackIcon from '../../../5shared/assets/icons/icons/mainIcons/backpack1.png';
 import BankIcon from '../../../5shared/assets/icons/icons/mainIcons/bank.png';

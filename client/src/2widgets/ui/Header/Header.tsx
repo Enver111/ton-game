@@ -4,16 +4,19 @@ import Ligtning from '../../../5shared/assets/icons/lightning.png';
 import Money from './Money';
 import style from './Header.module.css';
 
-export default function Header({ character }: { character: any }) {
+interface HeaderProps {
+  character: any;
+}
+const Header: React.FC<HeaderProps> = ({ character }) => {
   const currentHealth = character.stats.find(
     (stat: { name: string }) => stat.name === 'CURRENT_HIT_POINTS'
   ).value;
-  /* const maxHealth = character.stats.find(
+  const maxHealth = character.stats.find(
     (stat: { name: string }) => stat.name === 'MAXIMUM_HIT_POINTS'
-  ).value; */
-  const fatique = character.stats.find(
-    (stat: { name: string }) => stat.name === 'FATIQUE'
   ).value;
+  const fatique =
+    character.stats.find((stat: { name: string }) => stat.name === 'FATIQUE')
+      .value + 100;
 
   return (
     <header className={style.header}>
@@ -28,10 +31,12 @@ export default function Header({ character }: { character: any }) {
         icon={Ligtning}
         color1={'#8c4d00'}
         color2={'#f9b35d'}
-        value={100 - fatique}
+        value={fatique}
         max={100}
       />
-      <Money value={character.balance} />
+      <Money value={character.gold} />
     </header>
   );
-}
+};
+
+export default Header;

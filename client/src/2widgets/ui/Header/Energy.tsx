@@ -34,7 +34,6 @@ const Energy: React.FC<EnergyProps> = ({
         <div
           style={{
             width: `${percentage}%`,
-
             background: `linear-gradient(to right, ${color1}, ${color2})`,
             borderRadius: '10px',
             height: '18px',

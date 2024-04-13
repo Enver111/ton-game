@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import SettlementPage from '@pages/ui/SettlementPage/SettlementPage.tsx';
 import InventoryPage from '@pages/ui/InventoryPage/InventoryPage.tsx';
 import Loading from '@shared/ui/Loading.tsx';
-import ShopPage from '@pages/ui/ShopPage';
+import ShopPage from '@pages/ui/ShopPage/ShopPage';
 import PlayerPage from '@pages/ui/PlayerPage/PlayerPage.tsx';
 import Header from '@widgets/ui/Header/Header.tsx';
 import Footer from '@widgets/ui/Footer/Footer.tsx';
@@ -42,7 +42,7 @@ const Game = () => {
   if (!game) return <Loading />;
 
   const sceneComponentsMap: { [key: string]: JSX.Element } = {
-    bar_scene: <BarPage />,
+    bar_scene: <BarPage character={game.currentPlayer} />,
     village_scene: <SettlementPage game={game} />,
     inventory_scene: <InventoryPage game={game} />,
     shop_scene: <ShopPage />,

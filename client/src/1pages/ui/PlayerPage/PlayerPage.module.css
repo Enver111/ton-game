@@ -10,6 +10,7 @@
   margin: 20px;
   display: flex;
   gap: 20px;
+  width: 50%;
 }
 .icon {
   width: 50px;
@@ -29,6 +30,9 @@
 .stats:hover .info {
   opacity: 1;
 }
+.attributes:hover .info {
+  opacity: 1;
+}
 .stats:hover .info:before {
   content: '';
   position: absolute;
@@ -39,6 +43,7 @@
   font-size: 20px;
   margin: auto;
   color: brown;
+  font-weight: bold;
 }
 .info {
   position: absolute;
@@ -50,42 +55,3 @@
   border-radius: 5px;
   transition: opacity 0.3s;
 }
-/* const statsIcon: { [key: string]: string } = {
-    MAXIMUM_HIT_POINTS: MaxHitPoints,
-    MAXIMUM_ACTION_POINTS: MaxActionPoints,
-    ARMOR_CLASS: ArmorClass,
-    MELEE_DAMAGE: MeleeDamage,
-    CARRY_WEIGHT: CarryWeight,
-    SEQUENCE: Sequence,
-    HEALING_RATE: HealingRate,
-    CRITICAL_CHANCE: CriticalChance,
-    RADIATION_RESISTANCE: RadiationResistance,
-    AGE: Age,
-    GENDER: Gender,
-    CURRENT_HIT_POINTS: CurrentHitPoins,
-    CURRENT_RADIATION_LEVEL: CurrentRadiationLevel,
-    CURRENT_ACTION_POINTS: CurrentActionPoint,
-    UNSPENT_SKILL_POINTS: UnspentSkillPoint,
-    LEVEL: Level,
-    EXPERIENCE: Experience,
-    REPUTATION: Reputation,
-    KARMA: Karma,
-    FATIQUE: Fatique,
-  }; */
-
-/*  <div className={style.statsWrap}>
-        {player.attributes.map(
-          (attr: { name: string; value: number }, index: number) => (
-            <div className={style.stats} key={index}>
-              {statsIcon[attr.name] && (
-                <img
-                  className={style.icon2}
-                  src={statsIcon[attr.name]}
-                  alt={attr.name}
-                />
-              )}
-              <p>{attr.value}</p>
-            </div>
-          )
-        )}
-      </div> */

@@ -14,7 +14,7 @@ const Money: React.FC<MoneyProps> = ({ value }) => {
       <div className={style.icon} data-value={money}>
         <img className={style.icon_img} src={Cash} alt='money' />
       </div>
-      <p className={style.money}>{money}</p>
+      <p className={style.money_num}>{money}</p>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+.bar {
+  background-image: url(../../../5shared//assets/images/bar1.jpg);
+  background-position: center;
+  height: 900px;
+}
+.wrap {
+  display: flex;
+  background-color: rgba(0, 255, 255, 0.282);
+  justify-content: space-around;
+  padding: 10px 20px;
+}
+.actionItem {
+  margin: 0;
+  padding: 0;
+}
+.text {
+  margin: 0;
+  padding: 0;
+}
+.icon {
+  width: 50px;
+  margin: auto;
+  cursor: pointer;
+}

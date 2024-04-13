@@ -1,0 +1,52 @@
+.shop {
+  background-color: bisque;
+  height: 900px;
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+.text {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 70px;
+  cursor: pointer;
+}
+
+.buy {
+  position: relative;
+}
+.shop_buy {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.256);
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.icon_buy {
+  width: 60px;
+  background-color: rgba(255, 255, 255, 0.518);
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 2px;
+  cursor: pointer;
+}
+.item {
+  position: relative;
+}
+.item_buy {
+  position: absolute;
+  left: -1px;
+  top: 115px;
+  background-color: rgba(255, 255, 255, 0.256);
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+}
