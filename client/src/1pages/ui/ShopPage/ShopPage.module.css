@@ -22,6 +22,7 @@
 }
 .shop_buy {
   position: absolute;
+  left: -24px;
   display: flex;
   gap: 10px;
   background-color: rgba(255, 255, 255, 0.256);

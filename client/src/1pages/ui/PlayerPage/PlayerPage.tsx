@@ -1,10 +1,26 @@
 import Scale from '@shared/ui/Scale/Scale';
 import { attributeIcons, statsIcon } from '@shared/enums/GameIcons';
 import style from './PlayerPage.module.css';
+import ButtonExit from '@shared/ui/ButtonExit/ButtonExit';
+import { initData, useWebSocket } from '@shared/index';
 
 export default function PlayerPage({ player }: { player: any }) {
+  const ws = useWebSocket();
+  const handleExit = () => {
+    if (!ws) return;
+    ws.send(
+      JSON.stringify({
+        userId: initData.user?.id,
+        action: 'change_scene',
+        payload: { scene: 'village_scene' },
+      })
+    );
+  };
   return (
     <main className={style.player}>
+      <div className={style.btn}>
+        <ButtonExit handleExit={handleExit} />
+      </div>
       <div className={style.wrap}>
         {player.attributes.map(
           (attr: { name: string; value: number }, index: number) => (

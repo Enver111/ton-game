@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ character }) => {
         value={fatique}
         max={100}
       />
-      <Money value={character.gold} />
+      <Money value={/* character.gold */ 1000} />
     </header>
   );
 };

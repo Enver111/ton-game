@@ -11,6 +11,8 @@ import SellIcon from '../../../5shared/assets/icons/shop/sell.png';
 import ExitIcon from '../../../5shared/assets/icons/bar/exit.png';
 import Weapon from '@shared/ui/Weapon/Weapon';
 import Equipment from '@shared/ui/Equipment/Equipment';
+import MedicalKit from '@shared/ui/MedicalKit/MedicalKit';
+import Food from '@shared/ui/Food/Food';
 
 const ShopPage = () => {
   const ws = useWebSocket();
@@ -27,15 +29,15 @@ const ShopPage = () => {
 
   useEffect(() => {
     const defaultShopItems = [
-      { id: 1, img: WeaponIcon, action: 'Weapon', block: <Weapon /> },
-      { id: 2, img: ClothIcon, action: 'Cloth', block: <Equipment /> },
+      { id: 1, img: WeaponIcon, action: 'Оружие', block: <Weapon /> },
+      { id: 2, img: ClothIcon, action: 'Одежда', block: <Equipment /> },
       {
         id: 3,
         img: MedicalKitIcon,
-        action: 'MedicalKit',
-        block: <div>MedicalKit</div>,
+        action: 'Медикаменты',
+        block: <MedicalKit />,
       },
-      { id: 4, img: FoodIcon, action: 'Food', block: <div>Food</div> },
+      { id: 4, img: FoodIcon, action: 'Еда', block: <Food /> },
     ];
     setShopItems(defaultShopItems);
   }, []);
@@ -93,13 +95,13 @@ const ShopPage = () => {
                   style[shopItems[selectedItemId - 1].action.toLowerCase()]
                 } ${style.item_buy}`}
               >
-                {shopItems[selectedItemId - 1].action === 'Weapon' &&
+                {shopItems[selectedItemId - 1].action === 'Оружие' &&
                   shopItems[selectedItemId - 1].block}
-                {shopItems[selectedItemId - 1].action === 'Cloth' &&
+                {shopItems[selectedItemId - 1].action === 'Одежда' &&
                   shopItems[selectedItemId - 1].block}
-                {shopItems[selectedItemId - 1].action === 'MedicalKit' &&
+                {shopItems[selectedItemId - 1].action === 'Медикаменты' &&
                   shopItems[selectedItemId - 1].block}
-                {shopItems[selectedItemId - 1].action === 'Food' &&
+                {shopItems[selectedItemId - 1].action === 'Еда' &&
                   shopItems[selectedItemId - 1].block}
               </div>
             )}

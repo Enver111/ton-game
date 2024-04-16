@@ -1,0 +1,64 @@
+.inventory {
+  position: relative;
+}
+.wrap {
+  background-color: rgba(180, 180, 180, 0.442);
+  padding: 10px 20px;
+  text-align: center;
+  height: 500px;
+}
+.char_icon {
+  width: 300px;
+  position: relative;
+}
+.btn {
+  position: absolute;
+  top: 25px;
+  right: 5px;
+}
+
+.head {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 60px;
+  background-color: bisque;
+}
+.torso {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+  left: 260px;
+  top: 75px;
+  background-color: bisque;
+}
+.hands {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+  top: 150px;
+  left: 60px;
+  background-color: bisque;
+}
+.legs {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+  left: 260px;
+  top: 210px;
+  background-color: bisque;
+}
+.feet {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+  top: 280px;
+  left: 60px;
+  background-color: bisque;
+}

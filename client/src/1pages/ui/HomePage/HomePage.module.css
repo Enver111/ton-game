@@ -1,0 +1,29 @@
+.home {
+  background-color: bisque;
+  color: black;
+  position: relative;
+}
+.wrap {
+  background-color: rgba(0, 255, 255, 0.282);
+  padding: 10px 20px;
+  text-align: center;
+}
+.actionItem {
+  margin-bottom: 20px;
+  padding: 0;
+}
+.text {
+  margin: 0;
+  padding: 0;
+}
+.icon {
+  width: 50px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

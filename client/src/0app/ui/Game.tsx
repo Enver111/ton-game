@@ -9,6 +9,7 @@ import Footer from '@widgets/ui/Footer/Footer.tsx';
 import RoutesPage from '@pages/ui/RoutesPage/RoutesPage.tsx';
 import { initData, useWebSocket } from '@shared/index.ts';
 import BarPage from '@pages/ui/BarPage/BarPage';
+import HomePage from '@pages/ui/HomePage/HomePage';
 
 const setupWebSocketListeners = (
   ws: WebSocket | null,
@@ -44,8 +45,9 @@ const Game = () => {
   const sceneComponentsMap: { [key: string]: JSX.Element } = {
     bar_scene: <BarPage character={game.currentPlayer} />,
     village_scene: <SettlementPage game={game} />,
-    inventory_scene: <InventoryPage game={game} />,
+    inventory_scene: <InventoryPage />,
     shop_scene: <ShopPage />,
+    home_scene: <HomePage />,
     player_scene: <PlayerPage player={game.currentPlayer} />,
     routes_scene: <RoutesPage game={game} />,
     default: <div>Invalid scene</div>,

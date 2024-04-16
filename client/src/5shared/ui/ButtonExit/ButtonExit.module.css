@@ -1,0 +1,12 @@
+.icon {
+  width: 30px;
+  cursor: pointer;
+}
+.btn {
+  border: none;
+  background: none;
+}
+.text {
+  margin: auto;
+  font-size: 15px;
+}
