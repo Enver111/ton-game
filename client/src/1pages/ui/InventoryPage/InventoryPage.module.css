@@ -5,7 +5,6 @@
   background-color: rgba(180, 180, 180, 0.442);
   padding: 10px 20px;
   text-align: center;
-  height: 500px;
 }
 .char_icon {
   width: 300px;
@@ -19,7 +18,6 @@
 
 .head {
   position: absolute;
-
   width: 60px;
   height: 60px;
   top: 10px;
@@ -28,7 +26,6 @@
 }
 .torso {
   position: absolute;
-
   width: 60px;
   height: 60px;
   left: 260px;
@@ -37,7 +34,6 @@
 }
 .hands {
   position: absolute;
-
   width: 60px;
   height: 60px;
   top: 150px;
@@ -46,7 +42,6 @@
 }
 .legs {
   position: absolute;
-
   width: 60px;
   height: 60px;
   left: 260px;
@@ -55,10 +50,70 @@
 }
 .feet {
   position: absolute;
-
   width: 60px;
   height: 60px;
   top: 280px;
   left: 60px;
   background-color: bisque;
+}
+.char {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+.char div:nth-child(1) {
+  position: absolute;
+  top: -370px;
+  left: 35px;
+}
+.char div:nth-child(2) {
+  position: absolute;
+  top: -300px;
+  left: 240px;
+}
+.char div:nth-child(3) {
+  position: absolute;
+  top: -230px;
+  left: 35px;
+}
+.char div:nth-child(4) {
+  position: absolute;
+  top: -165px;
+  left: 240px;
+}
+.char div:nth-child(5) {
+  position: absolute;
+  top: -120px;
+  left: 35px;
+}
+
+.amunation_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+}
+
+.loot {
+  background-color: rgba(180, 180, 180, 0.442);
+  margin: 0;
+  padding: 20px 50px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr /1fr 1fr 1fr 1fr;
+}
+.loot_info {
+  padding: 10px;
+  margin: auto;
+  border: 1px solid black;
+}
+.loot_info p {
+  display: none;
+  text-align: center;
+}
+.logo {
+  width: 50px;
+  cursor: pointer;
 }
