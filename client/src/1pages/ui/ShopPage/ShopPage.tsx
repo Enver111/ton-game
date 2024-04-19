@@ -15,9 +15,10 @@ import {
   medicalKits,
 } from '@shared/lib/Items/items';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectWeapon } from '@shared/actions/actions';
+import { addSelectedItem } from '@shared/actions/actions';
 import { RootState } from '@app/reducers/store';
 import style from './ShopPage.module.css';
+import ItemsRender from '@shared/lib/Items/ItemsRender';
 
 const ShopPage = () => {
   const ws = useWebSocket();
@@ -54,25 +55,39 @@ const ShopPage = () => {
   };
 
   const dispatch = useDispatch();
-  const selectedWeapon = useSelector(
-    (state: RootState) => state.weapon.selectedWeapon
+
+  const selectedItem = useSelector(
+    (state: RootState) => state.shop.selectedItems
   );
   const handleCheckWeapon = () => {
-    if (selectedWeapon) {
-      console.log('Оружие было успешно сохранено:', selectedWeapon);
+    if (selectedItemId !== null) {
+      console.log('Предмет был успешно сохранен:', selectedItem);
     } else {
-      console.log('Оружие не было сохранено');
+      console.log('Предмет не был сохранено');
     }
   };
-  const handleBy = () => {
-    dispatch(selectWeapon(equipment));
+
+  const handleBy = (itemId: number) => {
+    if (selectedItemId !== null) {
+      const selectedItem = shopItems.find(
+        (items) => items.id === selectedItemId
+      );
+      if (selectedItem && selectedItem.block) {
+        const selectedWeapon = selectedItem.block.find(
+          (item: any) => item.id === itemId
+        );
+        if (selectedWeapon) {
+          dispatch(addSelectedItem(selectedWeapon));
+        }
+      }
+    }
   };
+
   const handleAction = (id: number): void => {
     if (selectedItemId === id) {
       setSelectedItemId(null);
     } else {
       setSelectedItemId(id);
-      /* dispatch(selectWeapon(weapons)); */
     }
   };
 
@@ -106,29 +121,37 @@ const ShopPage = () => {
             ))}
             {selectedItemId !== null && (
               <div
-                onClick={() => handleBy()}
                 className={`${
                   style[shopItems[selectedItemId - 1].action.toLowerCase()]
                 } ${style.item_buy}`}
               >
-                {shopItems[selectedItemId - 1].block.map((weapon: any) => (
-                  <div key={weapon.id} className={style.weaponCard}>
-                    <img
-                      src={weapon.logo}
-                      alt={weapon.name}
-                      className={style.weaponLogo}
-                    />
-                    <div className={style.weaponInfo}>
-                      <h4 className={style.name}>{weapon.name}</h4>
-                      <span className={style.characteristic}>
-                        Damage: {weapon.damage}
-                      </span>
+                {shopItems[selectedItemId - 1].action === 'Оружие' &&
+                  shopItems[selectedItemId - 1].block.map((weapon: any) => (
+                    <div
+                      key={weapon.id}
+                      className={style.weaponCard}
+                      onClick={() => handleBy(weapon.id)}
+                    >
+                      <img
+                        src={weapon.logo}
+                        alt={weapon.name}
+                        className={style.weaponLogo}
+                      />
+                      <div className={style.weaponInfo}>
+                        <h4 className={style.name}>{weapon.name}</h4>
+                        <span className={style.characteristic}>
+                          Damage: {weapon.damage}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
                 {shopItems[selectedItemId - 1].action === 'Одежда' &&
                   shopItems[selectedItemId - 1].block.map((cloth: any) => (
-                    <div key={cloth.id} className={style.weaponCard}>
+                    <div
+                      key={cloth.id}
+                      className={style.weaponCard}
+                      onClick={() => handleBy(cloth.id)}
+                    >
                       <img
                         src={cloth.logo}
                         alt={cloth.name}
@@ -144,7 +167,11 @@ const ShopPage = () => {
                   ))}
                 {shopItems[selectedItemId - 1].action === 'Медикаменты' &&
                   shopItems[selectedItemId - 1].block.map((medical: any) => (
-                    <div key={medical.id} className={style.weaponCard}>
+                    <div
+                      key={medical.id}
+                      className={style.weaponCard}
+                      onClick={() => handleBy(medical.id)}
+                    >
                       <img
                         src={medical.logo}
                         alt={medical.name}
@@ -160,7 +187,11 @@ const ShopPage = () => {
                   ))}
                 {shopItems[selectedItemId - 1].action === 'Еда' &&
                   shopItems[selectedItemId - 1].block.map((food: any) => (
-                    <div key={food.id} className={style.weaponCard}>
+                    <div
+                      key={food.id}
+                      className={style.weaponCard}
+                      onClick={() => handleBy(food.id)}
+                    >
                       <img
                         src={food.logo}
                         alt={food.name}
@@ -186,6 +217,9 @@ const ShopPage = () => {
       <div className={style.exit} onClick={handleExit}>
         <img className={style.icon} src={ExitIcon} alt='Exit' />
         <div className={style.text}>Выход</div>
+      </div>
+      <div className={style.items}>
+        <ItemsRender />
       </div>
     </main>
   );

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { weaponReducer } from '@shared/actions/reducer'; // Импортируйте ваши редукторы
-
+//import { weaponReducer } from '@shared/actions/reducer'; // Импортируйте ваши редукторы
+import shopReducer from '@shared/actions/reducer';
 const rootReducer = combineReducers({
-  weapon: weaponReducer,
+  shop: shopReducer,
   // Добавьте другие редукторы здесь
 });
 

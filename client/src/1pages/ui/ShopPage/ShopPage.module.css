@@ -82,3 +82,10 @@
 .characteristic {
   display: none;
 }
+.items {
+  position: absolute;
+  top: 650px;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+}

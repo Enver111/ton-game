@@ -67,6 +67,6 @@ body {
   min-height: 100%;
   flex-direction: column;
   background-size: cover;
-  gap: 8px;
+  /*  gap: 8px; */
   justify-content: space-between;
 }

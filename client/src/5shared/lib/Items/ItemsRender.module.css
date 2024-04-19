@@ -1,0 +1,13 @@
+.loot_info {
+  padding: 10px;
+  margin: 0;
+  border: 1px solid black;
+}
+.loot_info p {
+  display: none;
+  text-align: center;
+}
+.logo {
+  width: 50px;
+  cursor: pointer;
+}

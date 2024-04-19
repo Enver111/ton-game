@@ -1,4 +1,4 @@
-export const SELECT_WEAPON = 'SELECT_WEAPON';
+/* export const SELECT_WEAPON = 'SELECT_WEAPON';
 
 interface SelectWeaponAction {
   type: typeof SELECT_WEAPON;
@@ -12,3 +12,16 @@ export const selectWeapon = (weapon: any): SelectWeaponAction => ({
 
 export type WeaponActionTypes = SelectWeaponAction;
 export type AppActions = WeaponActionTypes;
+ */
+export const ADD_SELECTED_ITEM = 'ADD_SELECTED_ITEM';
+
+interface AddSelectedItem {
+  type: typeof ADD_SELECTED_ITEM;
+  payload: any;
+}
+export const addSelectedItem = (item: any): AddSelectedItem => ({
+  type: ADD_SELECTED_ITEM,
+  payload: item,
+});
+
+export type AddSelectedItemTypes = AddSelectedItem;
