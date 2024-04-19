@@ -84,8 +84,9 @@
 }
 .items {
   position: absolute;
-  top: 650px;
-  padding: 0 10px;
+  top: 150;
+  left: 13px;
+  /*  padding: 0 10px; */
   display: flex;
   flex-wrap: wrap;
 }

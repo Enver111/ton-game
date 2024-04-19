@@ -23,7 +23,9 @@ import ItemsRender from '@shared/lib/Items/ItemsRender';
 const ShopPage = () => {
   const ws = useWebSocket();
   const [showShopBuy, setShowShopBuy] = useState(false);
+  const [showShopSell, setShowShopSell] = useState(false);
   const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
+
   const [shopItems, setShopItems] = useState<
     {
       id: number;
@@ -55,22 +57,14 @@ const ShopPage = () => {
   };
 
   const dispatch = useDispatch();
-
-  const selectedItem = useSelector(
+  /*  const selectedItem = useSelector(
     (state: RootState) => state.shop.selectedItems
-  );
-  const handleCheckWeapon = () => {
-    if (selectedItemId !== null) {
-      console.log('Предмет был успешно сохранен:', selectedItem);
-    } else {
-      console.log('Предмет не был сохранено');
-    }
-  };
+  ); */
 
   const handleBy = (itemId: number) => {
     if (selectedItemId !== null) {
       const selectedItem = shopItems.find(
-        (items) => items.id === selectedItemId
+        (items: any) => items.id === selectedItemId
       );
       if (selectedItem && selectedItem.block) {
         const selectedWeapon = selectedItem.block.find(
@@ -84,16 +78,18 @@ const ShopPage = () => {
   };
 
   const handleAction = (id: number): void => {
-    if (selectedItemId === id) {
-      setSelectedItemId(null);
-    } else {
-      setSelectedItemId(id);
-    }
+    setSelectedItemId(selectedItemId === id ? null : id);
   };
 
   const toggleShopBuy = () => {
     setShowShopBuy((prev) => !prev);
     setSelectedItemId(null);
+    setShowShopSell(false);
+  };
+
+  const togglShopSell = () => {
+    setShowShopSell((prev) => !prev);
+    setShowShopBuy(false);
   };
 
   return (
@@ -210,16 +206,28 @@ const ShopPage = () => {
           </div>
         )}
       </div>
-      <div className={style.sell} onClick={handleCheckWeapon}>
-        <img className={style.icon} src={SellIcon} alt='sell' />
+      <div className={style.sell}>
+        <img
+          className={style.icon}
+          src={SellIcon}
+          alt='sell'
+          onClick={togglShopSell}
+        />
         <div className={style.text}>Продать</div>
+        {showShopSell && (
+          <div className={style.items}>
+            <ItemsRender />
+          </div>
+        )}
       </div>
-      <div className={style.exit} onClick={handleExit}>
-        <img className={style.icon} src={ExitIcon} alt='Exit' />
+      <div className={style.exit}>
+        <img
+          className={style.icon}
+          src={ExitIcon}
+          alt='Exit'
+          onClick={handleExit}
+        />
         <div className={style.text}>Выход</div>
-      </div>
-      <div className={style.items}>
-        <ItemsRender />
       </div>
     </main>
   );
